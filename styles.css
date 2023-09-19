@@ -1,15 +1,24 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Arial';
   background-color: white;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: #121641;
+  background: #121641;
   color: white;
   text-align: center;
   padding: 20px 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .container {
@@ -21,12 +30,21 @@ header {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .container img {
-  margin: 0 auto;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border: 5px solid #121641;
+  transition: transform 0.3s ease-in-out;
 }
 
+.container img:hover {
+  transform: scale(1.05);
+}
 h2 {
   color: #121641;
   text-align: center;
@@ -34,11 +52,15 @@ h2 {
 
 table {
   width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
 }
 
 th,
 td {
-  padding: 10px;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid white;
 }
 
 th {
@@ -48,5 +70,19 @@ th {
 }
 
 ul.keahlian {
-  text-align: left;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+ul.keahlian li {
+  margin-bottom: 5px;
+}
+
+a {
+  color: #121641;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
