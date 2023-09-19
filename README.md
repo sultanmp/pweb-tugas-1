@@ -1,3 +1,3 @@
-# Tugas 1 Pemrograman Web
+# Tugas Pemrograman Web
 
 membuat cv sebagai aplikasi sederhana html
