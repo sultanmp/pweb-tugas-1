@@ -1,52 +1,16 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: white;
+body,
+html {
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
 header {
-  background-color: #121641;
+  background: #3273e9;
   color: white;
-  text-align: center;
-  padding: 20px 0;
-}
-
-.container {
-  max-width: 800px;
-  margin: 20px auto;
-  background-color: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-}
-
-.container img {
-  margin: 0 auto;
-}
-
-h2 {
-  color: #121641;
-  text-align: center;
-}
-
-table {
-  width: 100%;
-}
-
-th,
-td {
-  padding: 10px;
-}
-
-th {
-  background-color: #121641;
-  color: white;
-  font-weight: bold;
-}
-
-ul.keahlian {
-  text-align: left;
+  padding: 20px 200px;
 }
