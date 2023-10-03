@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator</title>
+  </head>
+  <body>
+    <h1>Kalkulator</h1>
+    <input id="display" disabled />
+    <button onclick="appendValue('1')">1</button>
+    <button onclick="appendValue('2')">2</button>
+    <button onclick="appendValue('3')">3</button>
+    <button onclick="appendValue('4')">4</button>
+    <button onclick="appendValue('5')">5</button>
+    <button onclick="appendValue('6')">6</button>
+    <button onclick="appendValue('7')">7</button>
+    <button onclick="appendValue('8')">8</button>
+    <button onclick="appendValue('9')">9</button>
+    <button onclick="appendValue('0')">0</button>
+    <button onclick="setOperator('+')">+</button>
+    <button onclick="setOperator('-')">-</button>
+    <button onclick="setOperator('*')">×</button>
+    <button onclick="setOperator('/')">÷</button>
+    <button onclick="calculateResult()">=</button>
+    <button onclick="clearDisplay()">Clear</button>
+    <p>Hasil:</p>
+    <p id="hasil"></p>
+
+    <script>
+      let currentValue = '';
+      let operator = '';
+      let secondValue = '';
+
+      function appendValue(value) {
+        currentValue += value;
+        document.getElementById('display').value = currentValue;
+      }
+
+      function setOperator(op) {
+        if (currentValue !== '') {
+          operator = op;
+          secondValue = currentValue;
+          currentValue = '';
+        }
+      }
+
+      function calculateResult() {
+        let result;
+        switch (operator) {
+          case '+':
+            result = parseFloat(secondValue) + parseFloat(currentValue);
+            break;
+          case '-':
+            result = parseFloat(secondValue) - parseFloat(currentValue);
+            break;
+          case '*':
+            result = parseFloat(secondValue) * parseFloat(currentValue);
+            break;
+          case '/':
+            result = parseFloat(secondValue) / parseFloat(currentValue);
+            break;
+          default:
+            result = NaN;
+        }
+
+        document.getElementById('hasil').innerText = result;
+        currentValue = result.toString();
+        operator = '';
+        secondValue = '';
+      }
+
+      function clearDisplay() {
+        currentValue = '';
+        operator = '';
+        secondValue = '';
+        document.getElementById('display').value = '';
+        document.getElementById('hasil').innerText = '';
+      }
+    </script>
+  </body>
+</html>
